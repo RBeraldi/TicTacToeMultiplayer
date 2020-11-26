@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/FirstFragment">
+
+    <fragment
+        android:id="@+id/FirstFragment"
+        android:name="com.beraldi.tictactoemultiplayer.FirstFragment"
+        android:label="@string/first_fragment_label"
+        tools:layout="@layout/fragment_first">
+        <action
+            android:id="@+id/action_FirstFragment_to_waiting"
+            app:destination="@id/waiting" />
+    </fragment>
+    <fragment
+        android:id="@+id/SecondFragment"
+        android:name="com.beraldi.tictactoemultiplayer.SecondFragment"
+        android:label="@string/second_fragment_label"
+        tools:layout="@layout/fragment_second"/>
+    <fragment
+        android:id="@+id/waiting"
+        android:name="com.beraldi.tictactoemultiplayer.Waiting"
+        android:label="fragment_waiting"
+        tools:layout="@layout/fragment_waiting" >
+        <action
+            android:id="@+id/action_waiting_to_SecondFragment"
+            app:destination="@id/SecondFragment" />
+    </fragment>
+</navigation>
